@@ -12,14 +12,14 @@ import {
 import useGlobalStore from "@/store/store";
 
 export function NavSecondary() {
-  const { setSettingsOpen, } = useGlobalStore();
+  const { setSettingsOpen, setSearchOpen } = useGlobalStore();
 
   return (
     <SidebarGroup className="mt-auto">
       <SidebarGroupContent>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton>
+            <SidebarMenuButton onClick={() => setSearchOpen(true)}>
               <IconSearch />
               <span>Search</span>
             </SidebarMenuButton>
