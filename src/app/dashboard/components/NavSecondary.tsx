@@ -9,8 +9,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import useGlobalStore from "@/store/store";
 
 export function NavSecondary() {
+  const { setSettingsOpen, } = useGlobalStore();
+
   return (
     <SidebarGroup className="mt-auto">
       <SidebarGroupContent>
@@ -22,7 +25,7 @@ export function NavSecondary() {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton>
+            <SidebarMenuButton onClick={() => setSettingsOpen(true)}>
               <IconSettings />
               <span>Settings</span>
             </SidebarMenuButton>
