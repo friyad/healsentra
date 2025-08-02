@@ -2,6 +2,8 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { Metadata } from "next";
 import { AppSidebar } from "./components/AppSidebar";
 import { PageHeader } from "./components/PageHeader";
+import SettingsModal from "./components/SettingsModal";
+import SearchModal from "./components/SearchModal";
 
 export const metadata: Metadata = {
   title: "Healsentra - Dashboard",
@@ -25,6 +27,9 @@ export default function DashboardLayout({
       <SidebarInset>
         <PageHeader />
         {children}
+
+        <SettingsModal />
+        <SearchModal />
       </SidebarInset>
     </SidebarProvider>
   );
