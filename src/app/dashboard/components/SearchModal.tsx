@@ -16,7 +16,11 @@ const SearchModal = () => {
 
   return (
     <>
-      <CommandDialog open={isSearchOpen} onOpenChange={setSearchOpen}>
+      <CommandDialog
+        open={isSearchOpen}
+        onOpenChange={setSearchOpen}
+        className="overflow-auto max-h-[95dvh]"
+      >
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>

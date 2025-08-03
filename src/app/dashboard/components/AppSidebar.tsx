@@ -9,6 +9,7 @@ import {
   IconHome,
   IconUsers,
   IconUsersGroup,
+  IconUsersPlus,
 } from "@tabler/icons-react";
 import { NavMain } from "./NavMain";
 import { NavSecondary } from "./NavSecondary";
@@ -22,6 +23,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import NavManage from "./NavManage";
 
 export const sidebarData = {
   user: {
@@ -46,6 +48,11 @@ export const sidebarData = {
       icon: IconAdjustments,
     },
     {
+      title: "Doctors",
+      url: "/dashboard/doctors",
+      icon: IconUsersPlus,
+    },
+    {
       title: "Inventory",
       url: "/dashboard/inventory",
       icon: IconFolder,
@@ -55,6 +62,8 @@ export const sidebarData = {
       url: "/dashboard/analytics",
       icon: IconChartBar,
     },
+  ],
+  manage: [
     {
       title: "User Management",
       url: "/dashboard/users",
@@ -83,6 +92,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={sidebarData.navMain} />
+        <NavManage items={sidebarData.manage} />
         <NavSecondary />
       </SidebarContent>
       <SidebarFooter>
