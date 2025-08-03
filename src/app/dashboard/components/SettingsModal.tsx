@@ -19,7 +19,7 @@ const SettingsModal = () => {
   return (
     <>
       <Dialog open={isSettingsOpen} modal onOpenChange={setSettingsOpen}>
-        <DialogContent className="sm:max-w-[525px]">
+        <DialogContent className="sm:max-w-[525px] overflow-auto max-h-[95dvh]">
           <DialogHeader>
             <DialogTitle>Settings</DialogTitle>
             <DialogDescription>

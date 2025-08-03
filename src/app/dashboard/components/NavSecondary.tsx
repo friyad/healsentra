@@ -12,7 +12,7 @@ import {
 import useGlobalStore from "@/store/store";
 
 export function NavSecondary() {
-  const { setSettingsOpen, setSearchOpen } = useGlobalStore();
+  const { setSettingsOpen, setSearchOpen, setHelpOpen } = useGlobalStore();
 
   return (
     <SidebarGroup className="mt-auto">
@@ -31,7 +31,7 @@ export function NavSecondary() {
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton>
+            <SidebarMenuButton onClick={() => setHelpOpen(true)}>
               <IconHelp />
               <span>Get Help</span>
             </SidebarMenuButton>
