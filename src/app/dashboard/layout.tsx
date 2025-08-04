@@ -27,7 +27,8 @@ export default function DashboardLayout({
       <AppSidebar variant="inset" />
       <SidebarInset>
         <PageHeader />
-        {children}
+
+        <div className="p-5">{children}</div>
 
         <SettingsModal />
         <SearchModal />
