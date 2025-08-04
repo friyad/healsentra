@@ -20,3 +20,8 @@ export const getPatients = async (
   });
   return data;
 };
+
+export const getPatientById = async (id: string): Promise<Patient> => {
+  const { data } = await axios.get(`/patients/${id}`);
+  return data;
+};
