@@ -24,12 +24,13 @@ import {
 } from "@/components/ui/sidebar";
 import NavManage from "./NavManage";
 import Logo from "@/components/Logo";
+import avatar from "@/assets/images/avatar.png";
 
 export const sidebarData = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Riyad Hossain",
+    email: "friyaddev@gmail.com",
+    avatar: avatar.src,
   },
   navMain: [
     {
