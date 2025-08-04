@@ -13,6 +13,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { IconEdit, IconEye, IconTrash } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
+import { deletePatientById } from "@/lib/api/patients.api";
+import { toast } from "sonner";
 
 interface Props {
   row: Row<Patient>; // Adjust type based on your row structure
@@ -33,6 +35,20 @@ const PatientsTableRow = ({ row }: Props) => {
     admissionDate,
     treatment,
   } = row.original;
+
+  // Handle delete action
+  const handleDelete = async () => {
+    const confirm = window.confirm(
+      `Are you sure you want to delete patient ${firstName} ${lastName}?`
+    );
+    if (!confirm) return;
+    try {
+      await deletePatientById(_id);
+      toast.success("Patient deleted successfully!");
+    } catch (error) {
+      toast.error("Failed to delete patient. Please try again later.");
+    }
+  };
 
   return (
     <TableRow data-state={row.getIsSelected() && "selected"}>
@@ -93,7 +109,12 @@ const PatientsTableRow = ({ row }: Props) => {
           <Button size="icon" variant="outline" className="cursor-pointer">
             <IconEdit />
           </Button>
-          <Button size="icon" variant="outline" className="cursor-pointer">
+          <Button
+            onClick={handleDelete}
+            size="icon"
+            variant="outline"
+            className="cursor-pointer"
+          >
             <IconTrash className="text-red-400" />
           </Button>
           <Button

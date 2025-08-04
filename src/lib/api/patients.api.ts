@@ -25,3 +25,13 @@ export const getPatientById = async (id: string): Promise<Patient> => {
   const { data } = await axios.get(`/patients/${id}`);
   return data;
 };
+
+export const deletePatientById = async (id: string): Promise<void> => {
+  const { data } = await axios.delete(`/patients/${id}`);
+  return data;
+};
+
+export const addPatient = async (patientData: Patient): Promise<Patient> => {
+  const { data } = await axios.post("/patients", patientData);
+  return data;
+};

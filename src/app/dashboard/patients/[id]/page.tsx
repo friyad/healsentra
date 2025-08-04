@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 
 import { getPatientById } from "@/lib/api/patients.api";
 import { formatDateDaily } from "@/utils/date";
+import DeletePatientBtnComp from "../components/DeletePatientBtnComp";
 
 export const metadata: Metadata = {
   title: "Healsentra - Dashboard - Patients",
@@ -183,7 +184,7 @@ export default async function PatientDetails({
                 </TableHeader>
                 <TableBody>
                   {res.medicalRecords.map((record) => (
-                    <TableRow>
+                    <TableRow key={record.recordId}>
                       <TableCell>{formatDateDaily(record.date)}</TableCell>
                       <TableCell>
                         {record.recordId.slice(-5, record.recordId.length)}
@@ -208,9 +209,7 @@ export default async function PatientDetails({
             <Button variant="secondary" className="px-6 cursor-pointer">
               Edit Details
             </Button>
-            <Button variant="destructive" className="px-6 cursor-pointer">
-              Delete Patient
-            </Button>
+            <DeletePatientBtnComp data={res} />
           </div>
         </div>
       )}
