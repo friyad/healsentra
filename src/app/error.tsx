@@ -16,7 +16,7 @@ export default function Error({
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
             Oops! Something Went Wrong
           </h1>
-          <p className="text-gray-500">
+          <p className="text-accent-foreground">
             Looks like we&apos;ve hit a snag in the digital realm.
           </p>
         </div>

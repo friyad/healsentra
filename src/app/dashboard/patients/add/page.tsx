@@ -19,8 +19,8 @@ export default function AddPatient() {
         </Link>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-5">
-        <p className="text-gray-700">This is the patients list page.</p>
+      <div className="bg-primary-foreground rounded-lg shadow-md p-5">
+        <p className="text-accent-foreground">This is the patients list page.</p>
       </div>
     </div>
   );

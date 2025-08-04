@@ -109,7 +109,7 @@ const PatientsTable = ({ data }: Props) => {
               return (
                 <TableHead
                   key={header.id}
-                  className="py-2 xl:py-3 2xl:py-4 last:border-r first:border-l bg-primary/5"
+                  className="py-2 xl:py-3 2xl:py-4 last:border-r first:border-l bg-primary/5 dark:bg-accent"
                 >
                   {header.isPlaceholder
                     ? null
