@@ -4,7 +4,6 @@ import * as React from "react";
 import {
   IconAdjustments,
   IconChartBar,
-  IconFirstAidKit,
   IconFolder,
   IconHome,
   IconUsers,
@@ -24,8 +23,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import NavManage from "./NavManage";
-import Image from "next/image";
-import logo from "@/assets/images/logo.png";
+import Logo from "@/components/Logo";
 
 export const sidebarData = {
   user: {
@@ -84,18 +82,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5 hover:bg-transparent active:bg-transparent focus:bg-transparent w-fit"
             >
-              <a href="">
-                <Image
-                  src={logo}
-                  alt="Healsentra Logo"
-                  width={32}
-                  height={32}
-                  className="size-8"
-                />
-                <span className="text-2xl font-extrabold italic">
-                  Healsentra
-                </span>
-              </a>
+              <Logo />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
