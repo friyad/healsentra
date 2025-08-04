@@ -94,7 +94,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="py-2 px-4 text-red-600 font-semibold">
+            <DropdownMenuItem className="py-2 px-4 text-red-600 hover:text-red-600 focus:text-red-600 font-semibold">
               <IconLogout className="text-red-600" />
               Log out
             </DropdownMenuItem>

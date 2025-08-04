@@ -49,7 +49,7 @@ export default async function PatientDetails({
       </div>
 
       {!res && (
-        <div className="bg-white border p-8 max-w-4xl mx-auto text-center">
+        <div className="bg-background border p-8 max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-semibold mb-4">Patient Not Found</h3>
           <p className="text-gray-500 mb-6">
             The patient with ID <span className="font-mono">{id}</span> does not
@@ -64,10 +64,10 @@ export default async function PatientDetails({
       )}
 
       {res && (
-        <div className="bg-white border p-8 max-w-4xl mx-auto">
+        <div className="bg-background border p-8 max-w-4xl mx-auto">
           {/* Patient Avatar and Basic Info */}
           <div className="flex flex-col lg:flex-row text-center lg:text-left items-center gap-6 mb-8">
-            <div className="size-24 md:size-28 rounded-full bg-gray-100 flex items-center justify-center text-4xl font-bold text-primary/50 border-2 border-primary/80">
+            <div className="size-24 md:size-28 rounded-full bg-accent flex items-center justify-center text-4xl font-bold text-primary/50 border-2 border-primary/80 dark:border-primary/40">
               {/* Placeholder for patient avatar */}
               {res.firstName.slice(0, 1).toUpperCase()}
             </div>
@@ -94,7 +94,7 @@ export default async function PatientDetails({
               <h4 className="text-sm xssm:text-base lg:text-lg font-bold mb-2">
                 Personal Information
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-accent-foreground">
                 <li>
                   <span className="font-medium text-sm lg:text-base">Age:</span>{" "}
                   {res.age || "N/A"} years
@@ -136,7 +136,7 @@ export default async function PatientDetails({
               <h4 className="text-sm xssm:text-base lg:text-lg font-bold mb-2">
                 Medical Information
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-accent-foreground">
                 <li>
                   <span className="font-medium text-sm lg:text-base">
                     Blood Type:

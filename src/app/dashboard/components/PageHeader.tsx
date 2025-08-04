@@ -5,8 +5,11 @@ import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { usePathname } from "next/navigation";
 import { sidebarData } from "./AppSidebar";
+import { IconBrightnessFilled, IconBrightnessUp } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
 
 export function PageHeader() {
+  const { setTheme, theme } = useTheme();
   const pathname = usePathname();
   const matchItem = sidebarData.navMain.find((item) => pathname === item.url);
 
@@ -22,15 +25,19 @@ export function PageHeader() {
           {matchItem ? matchItem.title : "Healsentra"}
         </h1>
         <div className="ml-auto flex items-center gap-2">
-          <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
-            <a
-              href="https://github.com/shadcn-ui/ui/tree/main/apps/v4/app/(examples)/dashboard"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="dark:text-foreground"
-            >
-              GitHub
-            </a>
+          <Button
+            onClick={() =>
+              setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+            }
+            variant="outline"
+            size="icon"
+            className="size-9 cursor-pointer"
+          >
+            {theme === "dark" ? (
+              <IconBrightnessUp className="size-6" />
+            ) : (
+              <IconBrightnessFilled className="size-6" />
+            )}
           </Button>
         </div>
       </div>
