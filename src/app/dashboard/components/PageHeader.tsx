@@ -9,7 +9,7 @@ import { IconBrightnessFilled, IconBrightnessUp } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
 export function PageHeader() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const pathname = usePathname();
   const matchItem = sidebarData.navMain.find((item) => pathname === item.url);
 
@@ -33,7 +33,7 @@ export function PageHeader() {
             size="icon"
             className="size-9 cursor-pointer"
           >
-            {theme === "dark" ? (
+            {resolvedTheme === "dark" ? (
               <IconBrightnessUp className="size-6" />
             ) : (
               <IconBrightnessFilled className="size-6" />
