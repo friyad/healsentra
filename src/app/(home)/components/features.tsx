@@ -2,37 +2,37 @@ import React from "react";
 
 const features = [
   {
-    icon: Settings2,
+    // icon: Settings2,
     title: "Customizable Layouts",
     description:
       "Design your space with drag-and-drop simplicity—create grids, lists, or galleries in seconds.",
   },
   {
-    icon: Blocks,
+    // icon: Blocks,
     title: "Interactive Widgets",
     description:
       "Embed polls, quizzes, or forms to keep your audience engaged.",
   },
   {
-    icon: Bot,
+    // icon: Bot,
     title: "AI-Powered Tools",
     description:
       "Generate summaries, auto-format content, or translate into multiple languages seamlessly.",
   },
   {
-    icon: Film,
+    // icon: Film,
     title: "Media Integrations",
     description:
       "Connect with Spotify, Instagram, or your own media library for dynamic visuals and sound.",
   },
   {
-    icon: ChartPie,
+    // icon: ChartPie,
     title: "Advanced Analytics",
     description:
       "Track engagement, clicks, and user activity with intuitive charts and reports.",
   },
   {
-    icon: MessageCircle,
+    // icon: MessageCircle,
     title: "Seamless Collaboration",
     description:
       "Comment, tag, and assign tasks directly within your documents.",
@@ -45,7 +45,7 @@ const Features = () => {
       <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold tracking-tight text-center">
         Unleash Your Creativity
       </h2>
-      <div className="w-full max-w-screen-lg mx-auto mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* <div className="w-full max-w-screen-lg mx-auto mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature) => (
           <div
             key={feature.title}
@@ -60,7 +60,7 @@ const Features = () => {
             </p>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
