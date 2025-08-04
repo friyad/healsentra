@@ -52,38 +52,47 @@ const PatientsTableRow = ({ row }: Props) => {
 
   return (
     <TableRow data-state={row.getIsSelected() && "selected"}>
-      <TableCell className="py-2 lg:py-3 2xl:py-4 border-l">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4 border-l">
         <p className="text-sm 3xl:text-base uppercase">
           {_id.slice(-6, _id.length)}
         </p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base">{firstName + " " + lastName}</p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base capitalize">{gender}</p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base">{formatDateDaily(dateOfBirth)}</p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base">{age}</p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base">{bloodGroup}</p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
-        <p className="text-sm 3xl:text-base w-16 truncate 2xl:w-auto">
-          {contact.phone}
-        </p>
-      </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <Tooltip>
           <TooltipTrigger>
-            <p className="text-sm 3xl:text-base max-w-24 mxl:max-w-32 truncate cursor-default">
+            <p className="text-sm 3xl:text-base w-16 truncate 2xl:w-auto hidden 2xl:inline-block">
+              {contact.phone}
+            </p>
+            <p className="text-sm cursor-default 2xl:hidden">View</p>
+          </TooltipTrigger>
+          <TooltipContent className="2xl:hidden">
+            <p className="text-sm 3xl:text-base">{contact.phone}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TableCell>
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
+        <Tooltip>
+          <TooltipTrigger>
+            <p className="text-sm 3xl:text-base max-w-24 3xl:max-w-32 truncate cursor-default hidden 2xl:inline-block">
               {contact.address}, {contact.city}, {contact.state},{" "}
               {contact.zipCode}
             </p>
+            <p className="text-sm cursor-default 2xl:hidden">View</p>
           </TooltipTrigger>
           <TooltipContent>
             <p className="text-sm 3xl:text-base">
@@ -93,27 +102,31 @@ const PatientsTableRow = ({ row }: Props) => {
           </TooltipContent>
         </Tooltip>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base capitalize">{status}</p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base">
           {formatDateDaily(admissionDate)}
         </p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4">
+      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base capitalize">{treatment}</p>
       </TableCell>
-      <TableCell className="py-2 lg:py-3 2xl:py-4 px-0 pl-2 border-r">
+      <TableCell className="2xl:px-2 py-2 lg:py-3 2xl:py-4 px-0 pl-1 border-r">
         <div className="flex justify-start items-center">
-          <Button size="icon" variant="outline" className="cursor-pointer">
+          <Button
+            size="icon"
+            variant="outline"
+            className="cursor-pointer size-8 3xl:size-9"
+          >
             <IconEdit />
           </Button>
           <Button
             onClick={handleDelete}
             size="icon"
             variant="outline"
-            className="cursor-pointer"
+            className="cursor-pointer size-8 3xl:size-9"
           >
             <IconTrash className="text-red-400" />
           </Button>
@@ -121,7 +134,7 @@ const PatientsTableRow = ({ row }: Props) => {
             onClick={() => router.push(`/dashboard/patients/${_id}`)}
             size="icon"
             variant="outline"
-            className="cursor-pointer"
+            className="cursor-pointer size-8 3xl:size-9"
           >
             <IconEye />
           </Button>

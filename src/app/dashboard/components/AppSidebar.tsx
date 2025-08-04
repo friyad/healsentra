@@ -24,6 +24,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import NavManage from "./NavManage";
+import Image from "next/image";
+import logo from "@/assets/images/logo.png";
 
 export const sidebarData = {
   user: {
@@ -83,8 +85,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5 hover:bg-transparent active:bg-transparent focus:bg-transparent w-fit"
             >
               <a href="">
-                <IconFirstAidKit className="!size-5" />
-                <span className="text-base font-semibold">Healsentra</span>
+                <Image
+                  src={logo}
+                  alt="Healsentra Logo"
+                  width={32}
+                  height={32}
+                  className="size-8"
+                />
+                <span className="text-2xl font-extrabold italic">
+                  Healsentra
+                </span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

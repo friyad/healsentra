@@ -58,12 +58,12 @@ const PatientsPaginationComp = ({
   };
 
   return (
-    <div className="flex items-center justify-between mb-5">
+    <div className="grid grid-cols-1 xsm:grid-cols-5 min-[1150px]:grid-cols-12 gap-y-4 xsm:gap-y-6 min-[1150px]:gap-y-0 items-center mb-5">
       <Select
         value={limit.toString()}
         onValueChange={(value) => setLimit(parseInt(value))}
       >
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="xsm:col-span-1 ml-auto xsm:ml-0 !h-10 2xl:!h-12 w-full">
           <SelectValue placeholder="Select a fruit" />
         </SelectTrigger>
         <SelectContent>
@@ -79,11 +79,11 @@ const PatientsPaginationComp = ({
         placeholder="Search with name..."
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
-        className="h-12 w-1/3 placeholder:text-base !text-base"
+        className="xsm:col-span-4 min-[1150px]:col-span-5 h-10 2xl:h-12 xsm:w-5/6 ml-auto min-[1150px]:ml-3 placeholder:text-sm 2xl:placeholder:text-base !text-sm 2xl:!text-base"
       />
 
-      
-        <Pagination className="w-fit block mx-0">
+      <div className="xsm:col-span-5 min-[1150px]:col-span-6 flex justify-end items-center">
+        <Pagination className="w-fit mx-0">
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious onClick={handlePrevPage} />
@@ -142,7 +142,7 @@ const PatientsPaginationComp = ({
             </PaginationItem>
           </PaginationContent>
         </Pagination>
-      
+      </div>
     </div>
   );
 };
