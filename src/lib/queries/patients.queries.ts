@@ -1,10 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getPatients } from "../api/patients.api";
 
-export const usePatientsQuery = () => {
+export const usePatientsQuery = (
+  page: number,
+  limit: number,
+  search: string
+) => {
   return useQuery({
-    queryKey: ["patients"],
-    queryFn: getPatients,
-    refetchInterval: 5000, // Optional for live updates
+    queryKey: ["patients", page, limit, search],
+    queryFn: () => getPatients(page, limit, search),
+    placeholderData: keepPreviousData,
   });
 };
