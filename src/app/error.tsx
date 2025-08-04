@@ -17,7 +17,7 @@ export default function Error({
             Oops! Something Went Wrong
           </h1>
           <p className="text-gray-500">
-            Looks like we've hit a snag in the digital realm.
+            Looks like we&apos;ve hit a snag in the digital realm.
           </p>
         </div>
         <Button size="lg" onClick={reset} className="cursor-pointer">
