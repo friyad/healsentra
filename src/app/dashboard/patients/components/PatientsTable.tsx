@@ -28,7 +28,7 @@ const keyAndLabels = [
   { key: "gender", label: "Gender" },
   { key: "dateOfBirth", label: "Date of Birth" },
   { key: "age", label: "Age" },
-  { key: "bloodGroup", label: "Blood G" },
+  { key: "bloodGroup", label: "B G" },
   { key: "contact.phone", label: "Phone" },
   { key: "contact", label: "Address" },
   { key: "status", label: "Status" },
@@ -77,7 +77,7 @@ const PatientsTable = ({ data }: Props) => {
             >
               <span className="flex items-center justify-start text-right font-medium">
                 {label}
-                <IconArrowsUpDown className="ml-1 size-4" />
+                <IconArrowsUpDown className="ml-1 size-3.5" />
               </span>
             </button>
           );
@@ -109,7 +109,7 @@ const PatientsTable = ({ data }: Props) => {
               return (
                 <TableHead
                   key={header.id}
-                  className="py-2 xl:py-3 2xl:py-4 last:border-r first:border-l bg-primary/5 dark:bg-accent"
+                  className="px-1 2xl:px-2 py-2 xl:py-3 2xl:py-4 last:border-r first:border-l bg-primary/5 dark:bg-accent"
                 >
                   {header.isPlaceholder
                     ? null
