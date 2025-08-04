@@ -48,31 +48,40 @@ const PatientsTable = ({ data }: Props) => {
     const colData: ColumnDef<Patient>[] = [];
 
     // Generate columns based on keyAndLabels
-    keyAndLabels.forEach(({ key, label }) => {
-      //   if (key === "avgDiff") {
-      //     colData.push({
-      //       accessorKey: key,
-      //       header: ({ column }) => {
-      //         return (
-      //           <button
-      //             onClick={() =>
-      //               column.toggleSorting(column.getIsSorted() === "asc")
-      //             }
-      //           >
-      //             <span className="flex items-center justify-start text-right font-medium">
-      //               {label}
-      //               <IconArrowsUpDown className="ml-1 size-4" />
-      //             </span>
-      //           </button>
-      //         );
-      //       },
-      //     });
-      //     return;
-      //   }
+    keyAndLabels.forEach(({ key, label }, index) => {
+      if (
+        key === "" ||
+        key === "contact" ||
+        key === "_id" ||
+        key === "treatment" ||
+        key === "firstName+lastName" ||
+        key === "contact.phone"
+      ) {
+        colData.push({
+          header: label,
+          accessorKey: key,
+        });
+        return;
+      }
 
       colData.push({
-        header: label,
+        id: `${index}-${key}`,
         accessorKey: key,
+        header: ({ column }) => {
+          return (
+            <button
+              className="cursor-pointer select-none"
+              onClick={() =>
+                column.toggleSorting(column.getIsSorted() === "asc")
+              }
+            >
+              <span className="flex items-center justify-start text-right font-medium">
+                {label}
+                <IconArrowsUpDown className="ml-1 size-4" />
+              </span>
+            </button>
+          );
+        },
       });
     });
 
