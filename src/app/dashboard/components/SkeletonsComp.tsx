@@ -24,7 +24,11 @@ export const PatientsPageSkeletons = () => {
   return (
     <>
       <div className="flex justify-between items-center mb-5">
-        <Skeleton className="h-10 w-44 rounded bg-primary/10" />
+        <div className="flex justify-start items-center gap-3">
+          <Skeleton className="h-12 w-32 rounded bg-primary/10" />
+          <Skeleton className="h-12 w-72 rounded bg-primary/10" />
+        </div>
+
         <Skeleton className="h-10 w-72 rounded bg-primary/10" />
       </div>
       <Skeleton className="h-14 w-full rounded bg-primary/10" />
