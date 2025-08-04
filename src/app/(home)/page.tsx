@@ -1,9 +1,25 @@
+import CTABanner from "./components/cta-banner";
+import FAQ from "./components/faq";
+import Features from "./components/features";
+import Footer from "./components/footer";
+import Hero from "./components/hero";
+import { Navbar } from "./components/navbar";
+import Pricing from "./components/pricing";
+import Testimonials from "./components/testimonials";
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h1 className="text-5xl font-bold underline">
-        Hello world this is Riyad Hossain
-      </h1>
-    </div>
+    <>
+      <Navbar />
+      <main className="pt-16 xs:pt-20 sm:pt-24">
+        <Hero />
+        {/* <Features /> */}
+        <Pricing />
+        {/* <FAQ /> */}
+        <Testimonials />
+        <CTABanner />
+        <Footer />
+      </main>
+    </>
   );
 }
