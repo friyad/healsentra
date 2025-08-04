@@ -12,7 +12,7 @@ const ErrorComponent = ({ className, message, title }: Props) => {
   return (
     <div
       className={cn(
-        "p-4 border min-h-[calc(100dvh-110px)] flex flex-col justify-center items-center",
+        "border min-h-[calc(100dvh-210px)] py-6 flex flex-col justify-center items-center",
         className
       )}
     >
