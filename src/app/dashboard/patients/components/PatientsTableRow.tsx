@@ -113,7 +113,7 @@ const PatientsTableRow = ({ row }: Props) => {
       <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4">
         <p className="text-sm 3xl:text-base capitalize">{treatment}</p>
       </TableCell>
-      <TableCell className="px-1 2xl:px-2 py-2 lg:py-3 2xl:py-4 px-0 pl-2 border-r">
+      <TableCell className="2xl:px-2 py-2 lg:py-3 2xl:py-4 px-0 pl-1 border-r">
         <div className="flex justify-start items-center">
           <Button
             size="icon"
